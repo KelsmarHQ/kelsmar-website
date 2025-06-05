@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Demo - Kelsmar AI Marketing Platform</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <meta name="description" content="Experience Kelsmar's AI-powered campaign creation workflow. Interactive demo showcasing email/SMS campaign automation for DTC marketing teams.">
+</head>
+<body class="bg-background overflow-hidden">
+    <!-- Demo Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                        <path d="M12 14l2 2 6-6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-text-primary">Kelsmar</span>
+                    <span class="ml-3 text-sm text-text-secondary bg-primary-50 px-2 py-1 rounded-md">Demo</span>
+                </div>
+
+                <!-- Progress Indicators -->
+                <div class="hidden md:flex items-center space-x-2">
+                    <div class="flex items-center space-x-1">
+                        <div id="step-1" class="w-8 h-8 rounded-full bg-primary text-white text-sm flex items-center justify-center font-medium">1</div>
+                        <div class="w-8 h-1 bg-gray-200 rounded-full">
+                            <div id="progress-1-2" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        <div id="step-2" class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 text-sm flex items-center justify-center font-medium">2</div>
+                        <div class="w-8 h-1 bg-gray-200 rounded-full">
+                            <div id="progress-2-3" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        <div id="step-3" class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 text-sm flex items-center justify-center font-medium">3</div>
+                        <div class="w-8 h-1 bg-gray-200 rounded-full">
+                            <div id="progress-3-4" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        <div id="step-4" class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 text-sm flex items-center justify-center font-medium">4</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button class="btn-primary">Start Free Trial</button>
+                    <a href="marketing_platform_landing_page.html" class="text-text-secondary hover:text-primary transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Demo Container -->
+    <main class="pt-16 h-screen flex">
+        <!-- Demo Content Area -->
+        <div class="flex-1 flex flex-col">
+            <!-- Step 1: Campaign Type Selection -->
+            <section id="demo-step-1" class="demo-step flex-1 p-6 lg:p-8">
+                <div class="max-w-4xl mx-auto h-full flex flex-col justify-center">
+                    <div class="text-center mb-12">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+                            Create Your First AI Campaign
+                        </h1>
+                        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                            Choose your campaign type and let our AI guide you through creating a high-converting marketing campaign in minutes.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <!-- Email Campaign Option -->
+                        <div class="campaign-type-card card p-8 cursor-pointer hover-lift border-2 border-transparent hover:border-primary transition-all duration-300" onclick="selectCampaignType('email')">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-text-primary mb-3">Email Campaign</h3>
+                                <p class="text-text-secondary mb-4">
+                                    Create personalized email campaigns with AI-generated content, smart segmentation, and automated optimization.
+                                </p>
+                                <div class="flex items-center justify-center space-x-4 text-sm text-text-secondary">
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        AI Content
+                                    </span>
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        Smart Timing
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SMS Campaign Option -->
+                        <div class="campaign-type-card card p-8 cursor-pointer hover-lift border-2 border-transparent hover:border-primary transition-all duration-300" onclick="selectCampaignType('sms')">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-secondary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-text-primary mb-3">SMS Campaign</h3>
+                                <p class="text-text-secondary mb-4">
+                                    Reach customers instantly with personalized SMS messages, automated sequences, and real-time engagement tracking.
+                                </p>
+                                <div class="flex items-center justify-center space-x-4 text-sm text-text-secondary">
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        Instant Delivery
+                                    </span>
+                                    <span class="flex items-center">
+                                        <svg class="w-4 h-4 text-accent mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        High Open Rates
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Audience Targeting -->
+            <section id="demo-step-2" class="demo-step hidden flex-1 p-6 lg:p-8">
+                <div class="max-w-6xl mx-auto h-full flex flex-col">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-text-primary mb-4">
+                            Target Your Audience
+                        </h2>
+                        <p class="text-lg text-text-secondary">
+                            Our AI has analyzed your customer data and suggests these high-converting segments.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 grid lg:grid-cols-2 gap-8">
+                        <!-- Audience Segments -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-text-primary mb-4">Recommended Segments</h3>
+                            
+                            <!-- Segment 1 -->
+                            <div class="audience-segment card p-6 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-300" onclick="selectAudience('recent-buyers')">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-center mb-2">
+                                            <input type="radio" name="audience" id="recent-buyers" class="mr-3 text-primary">
+                                            <label for="recent-buyers" class="font-semibold text-text-primary">Recent Buyers (Last 30 Days)</label>
+                                        </div>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            Customers who made a purchase in the last 30 days. Perfect for cross-sell and upsell campaigns.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <span class="text-primary font-medium">2,847 customers</span>
+                                            <span class="text-accent">92% open rate</span>
+                                            <span class="text-secondary">15% CTR</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Segment 2 -->
+                            <div class="audience-segment card p-6 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-300" onclick="selectAudience('cart-abandoners')">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-center mb-2">
+                                            <input type="radio" name="audience" id="cart-abandoners" class="mr-3 text-primary">
+                                            <label for="cart-abandoners" class="font-semibold text-text-primary">Cart Abandoners</label>
+                                        </div>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            Customers who added items to cart but didn't complete purchase. High conversion potential.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <span class="text-primary font-medium">1,523 customers</span>
+                                            <span class="text-accent">87% open rate</span>
+                                            <span class="text-secondary">23% CTR</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Segment 3 -->
+                            <div class="audience-segment card p-6 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-300" onclick="selectAudience('vip-customers')">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="flex items-center mb-2">
+                                            <input type="radio" name="audience" id="vip-customers" class="mr-3 text-primary">
+                                            <label for="vip-customers" class="font-semibold text-text-primary">VIP Customers</label>
+                                        </div>
+                                        <p class="text-text-secondary text-sm mb-3">
+                                            High-value customers with 3+ purchases and $500+ lifetime value. Premium engagement segment.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <span class="text-primary font-medium">892 customers</span>
+                                            <span class="text-accent">95% open rate</span>
+                                            <span class="text-secondary">28% CTR</span>
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Audience Insights -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-text-primary">Audience Insights</h3>
+                            
+                            <div class="card p-6">
+                                <h4 class="font-semibold text-text-primary mb-4">Segment Performance</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Average Open Rate</span>
+                                        <span class="font-semibold text-text-primary">91.3%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-accent h-2 rounded-full" style="width: 91.3%"></div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Click-Through Rate</span>
+                                        <span class="font-semibold text-text-primary">18.7%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 18.7%"></div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Conversion Rate</span>
+                                        <span class="font-semibold text-text-primary">12.4%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-secondary h-2 rounded-full" style="width: 12.4%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card p-6">
+                                <h4 class="font-semibold text-text-primary mb-4">Best Send Times</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Tuesday 10:00 AM</span>
+                                        <span class="text-accent font-medium">Peak</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Thursday 2:00 PM</span>
+                                        <span class="text-primary font-medium">High</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Saturday 11:00 AM</span>
+                                        <span class="text-secondary font-medium">Good</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mt-8">
+                        <button onclick="previousStep()" class="btn-outline">
+                            ← Previous
+                        </button>
+                        <button onclick="nextStep()" class="btn-primary" id="audience-next" disabled>
+                            Continue to AI Generation →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: AI Campaign Generation -->
+            <section id="demo-step-3" class="demo-step hidden flex-1 p-6 lg:p-8">
+                <div class="max-w-6xl mx-auto h-full flex flex-col">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-text-primary mb-4">
+                            AI Campaign Generation
+                        </h2>
+                        <p class="text-lg text-text-secondary">
+                            Watch as our AI creates personalized campaign content based on your audience and goals.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 grid lg:grid-cols-2 gap-8">
+                        <!-- AI Generation Process -->
+                        <div class="space-y-6">
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">AI Generation Process</h3>
+                                
+                                <div class="space-y-4">
+                                    <!-- Step 1 -->
+                                    <div class="flex items-center space-x-3" id="ai-step-1">
+                                        <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-text-primary">Analyzing customer behavior patterns</span>
+                                    </div>
+
+                                    <!-- Step 2 -->
+                                    <div class="flex items-center space-x-3" id="ai-step-2">
+                                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center animate-pulse">
+                                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        </div>
+                                        <span class="text-text-secondary">Generating personalized content...</span>
+                                    </div>
+
+                                    <!-- Step 3 -->
+                                    <div class="flex items-center space-x-3" id="ai-step-3">
+                                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                                        </div>
+                                        <span class="text-text-secondary">Optimizing send timing</span>
+                                    </div>
+
+                                    <!-- Step 4 -->
+                                    <div class="flex items-center space-x-3" id="ai-step-4">
+                                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                                        </div>
+                                        <span class="text-text-secondary">Creating performance predictions</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-100">
+                                    <div class="text-sm font-medium text-primary-600">AI Analysis Complete!</div>
+                                    <div class="text-xs text-text-secondary mt-1">Generated 3 campaign variations with 94% predicted success rate</div>
+                                </div>
+                            </div>
+
+                            <!-- Campaign Templates -->
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Generated Templates</h3>
+                                
+                                <div class="space-y-3">
+                                    <div class="template-option p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors" onclick="selectTemplate('welcome-back')">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-text-primary">Welcome Back Campaign</h4>
+                                                <p class="text-sm text-text-secondary">Re-engagement for recent buyers</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-sm font-medium text-accent">94% Success Rate</div>
+                                                <div class="text-xs text-text-secondary">Recommended</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="template-option p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors" onclick="selectTemplate('exclusive-offer')">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-text-primary">Exclusive Offer</h4>
+                                                <p class="text-sm text-text-secondary">Limited-time promotion</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-sm font-medium text-primary">89% Success Rate</div>
+                                                <div class="text-xs text-text-secondary">High Converting</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="template-option p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors" onclick="selectTemplate('product-recommendation')">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h4 class="font-medium text-text-primary">Product Recommendations</h4>
+                                                <p class="text-sm text-text-secondary">Personalized suggestions</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <div class="text-sm font-medium text-secondary">85% Success Rate</div>
+                                                <div class="text-xs text-text-secondary">Personalized</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campaign Preview -->
+                        <div class="space-y-6">
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Campaign Preview</h3>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-200 min-h-96">
+                                    <div id="campaign-preview" class="hidden">
+                                        <!-- Email Preview -->
+                                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                                            <div class="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+                                                <div class="flex items-center space-x-3">
+                                                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                                        <span class="text-white text-sm font-medium">K</span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="font-medium text-text-primary">Your Brand</div>
+                                                        <div class="text-sm text-text-secondary">hello@yourbrand.com</div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-sm text-text-secondary">2 min ago</div>
+                                            </div>
+                                            
+                                            <div class="space-y-4">
+                                                <h4 class="text-lg font-semibold text-text-primary">Welcome back, Sarah! 🎉</h4>
+                                                <p class="text-text-secondary">
+                                                    We noticed you loved your recent purchase of the Premium Skincare Set. Based on your preferences, we've curated some perfect additions to your routine.
+                                                </p>
+                                                
+                                                <div class="bg-primary-50 rounded-lg p-4 border border-primary-100">
+                                                    <div class="flex items-center space-x-3">
+                                                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                                             alt="Product" 
+                                                             class="w-16 h-16 rounded-lg object-cover"
+                                                             onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                                                        <div class="flex-1">
+                                                            <h5 class="font-medium text-text-primary">Hydrating Serum</h5>
+                                                            <p class="text-sm text-text-secondary">Perfect complement to your routine</p>
+                                                            <div class="text-primary font-semibold">$49.99</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <button class="btn-primary w-full">
+                                                    Shop Your Recommendations
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="preview-placeholder" class="text-center py-12">
+                                        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                                        </svg>
+                                        <p class="text-text-secondary">Select a template to see the preview</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Performance Prediction -->
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Performance Prediction</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Predicted Open Rate</span>
+                                        <span class="font-semibold text-accent">47.2%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Predicted CTR</span>
+                                        <span class="font-semibold text-primary">12.8%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Predicted Conversion</span>
+                                        <span class="font-semibold text-secondary">8.4%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Estimated Revenue</span>
+                                        <span class="font-semibold text-text-primary">$12,450</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mt-8">
+                        <button onclick="previousStep()" class="btn-outline">
+                            ← Previous
+                        </button>
+                        <button onclick="nextStep()" class="btn-primary" id="generation-next" disabled>
+                            Customize Campaign →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Campaign Customization & Launch -->
+            <section id="demo-step-4" class="demo-step hidden flex-1 p-6 lg:p-8">
+                <div class="max-w-6xl mx-auto h-full flex flex-col">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-text-primary mb-4">
+                            Customize & Launch
+                        </h2>
+                        <p class="text-lg text-text-secondary">
+                            Fine-tune your campaign settings and schedule for optimal performance.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 grid lg:grid-cols-2 gap-8">
+                        <!-- Customization Options -->
+                        <div class="space-y-6">
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Campaign Settings</h3>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-text-primary mb-2">Campaign Name</label>
+                                        <input type="text" value="Welcome Back - Recent Buyers Q1 2025" class="input-field">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-text-primary mb-2">Subject Line</label>
+                                        <input type="text" value="Sarah, your skincare routine is about to get even better! ✨" class="input-field">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-text-primary mb-2">Send Time</label>
+                                        <select class="input-field">
+                                            <option>AI Optimized (Recommended)</option>
+                                            <option>Tuesday 10:00 AM</option>
+                                            <option>Thursday 2:00 PM</option>
+                                            <option>Custom Time</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <label class="text-sm font-medium text-text-primary">A/B Test Subject Lines</label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked>
+                                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <label class="text-sm font-medium text-text-primary">Smart Send Time Optimization</label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked>
+                                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Personalization</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <label class="text-sm font-medium text-text-primary">Dynamic Product Recommendations</label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked>
+                                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <label class="text-sm font-medium text-text-primary">Location-Based Content</label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked>
+                                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <label class="text-sm font-medium text-text-primary">Purchase History Targeting</label>
+                                        <label class="relative inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" class="sr-only peer" checked>
+                                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Launch Summary -->
+                        <div class="space-y-6">
+                            <div class="card p-6">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Campaign Summary</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Campaign Type</span>
+                                        <span class="font-medium text-text-primary" id="summary-type">Email Campaign</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Target Audience</span>
+                                        <span class="font-medium text-text-primary" id="summary-audience">Recent Buyers</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Recipients</span>
+                                        <span class="font-medium text-text-primary">2,847 customers</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Send Time</span>
+                                        <span class="font-medium text-text-primary">AI Optimized</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-text-secondary">Estimated Revenue</span>
+                                        <span class="font-medium text-accent">$12,450</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card p-6 bg-accent-50 border-accent-100">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Ready to Launch! 🚀</h3>
+                                
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        <span class="text-text-primary">AI-optimized content generated</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        <span class="text-text-primary">Audience segmentation complete</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        <span class="text-text-primary">Performance predictions calculated</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                        </svg>
+                                        <span class="text-text-primary">Send time optimized</span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <button class="btn-primary w-full text-lg py-4" onclick="launchCampaign()">
+                                        Launch Campaign Now
+                                    </button>
+                                    <button class="btn-outline w-full">
+                                        Schedule for Later
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Demo Completion CTA -->
+                            <div class="card p-6 bg-primary-50 border-primary-100">
+                                <h3 class="text-xl font-semibold text-text-primary mb-4">Experience the Full Platform</h3>
+                                <p class="text-text-secondary mb-6">
+                                    This demo showed just a glimpse of Kelsmar's capabilities. Start your free trial to access the complete AI-powered marketing platform.
+                                </p>
+                                <div class="space-y-3">
+                                    <button class="btn-primary w-full text-lg py-4">
+                                        Start Free Trial
+                                    </button>
+                                    <a href="marketing_platform_landing_page.html" class="btn-outline w-full block text-center">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mt-8">
+                        <button onclick="previousStep()" class="btn-outline">
+                            ← Previous
+                        </button>
+                        <a href="platform_integrations_showcase.html" class="btn-secondary">
+                            Explore Integrations →
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Floating Assistant Panel -->
+        <div id="assistant-panel" class="fixed right-6 bottom-6 w-80 bg-surface rounded-lg shadow-lg border border-gray-200 z-40 transform translate-x-full transition-transform duration-300">
+            <div class="p-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+                            </svg>
+                        </div>
+                        <span class="font-medium text-text-primary">AI Assistant</span>
+                    </div>
+                    <button onclick="toggleAssistant()" class="text-text-secondary hover:text-text-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-4">
+                <div id="assistant-content">
+                    <p class="text-sm text-text-secondary mb-3">
+                        Welcome to the Kelsmar demo! I'm here to help you understand how our AI creates high-converting campaigns.
+                    </p>
+                    <div class="space-y-2">
+                        <button class="text-left text-sm text-primary hover:text-primary-700 block">
+                            💡 How does AI content generation work?
+                        </button>
+                        <button class="text-left text-sm text-primary hover:text-primary-700 block">
+                            📊 What makes these predictions accurate?
+                        </button>
+                        <button class="text-left text-sm text-primary hover:text-primary-700 block">
+                            🎯 How is audience targeting optimized?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assistant Toggle Button -->
+        <button id="assistant-toggle" onclick="toggleAssistant()" class="fixed right-6 bottom-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-primary-700 transition-colors z-30 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"/>
+            </svg>
+        </button>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-surface rounded-lg shadow-lg max-w-md w-full p-6 transform scale-95 transition-transform duration-300">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-text-primary mb-2">Campaign Launched Successfully! 🎉</h3>
+                <p class="text-text-secondary mb-6">
+                    Your AI-powered campaign is now live and reaching 2,847 customers. You'll receive real-time performance updates as results come in.
+                </p>
+                <div class="space-y-3">
+                    <button class="btn-primary w-full" onclick="closeSuccessModal()">
+                        Start Free Trial
+                    </button>
+                    <button class="btn-outline w-full" onclick="closeSuccessModal()">
+                        View More Demos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Demo Functionality -->
+    <script>
+        let currentStep = 1;
+        let selectedCampaignType = '';
+        let selectedAudience = '';
+        let selectedTemplate = '';
+        let assistantOpen = false;
+
+        // Step Navigation
+        function nextStep() {
+            if (currentStep < 4) {
+                document.getElementById(`demo-step-${currentStep}`).classList.add('hidden');
+                currentStep++;
+                document.getElementById(`demo-step-${currentStep}`).classList.remove('hidden');
+                updateProgress();
+                updateAssistantContent();
+                
+                if (currentStep === 3) {
+                    startAIGeneration();
+                }
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById(`demo-step-${currentStep}`).classList.add('hidden');
+                currentStep--;
+                document.getElementById(`demo-step-${currentStep}`).classList.remove('hidden');
+                updateProgress();
+                updateAssistantContent();
+            }
+        }
+
+        function updateProgress() {
+            // Update step indicators
+            for (let i = 1; i <= 4; i++) {
+                const stepElement = document.getElementById(`step-${i}`);
+                if (i <= currentStep) {
+                    stepElement.classList.remove('bg-gray-200', 'text-gray-500');
+                    stepElement.classList.add('bg-primary', 'text-white');
+                } else {
+                    stepElement.classList.remove('bg-primary', 'text-white');
+                    stepElement.classList.add('bg-gray-200', 'text-gray-500');
+                }
+            }
+
+            // Update progress bars
+            for (let i = 1; i < 4; i++) {
+                const progressBar = document.getElementById(`progress-${i}-${i+1}`);
+                if (i < currentStep) {
+                    progressBar.style.width = '100%';
+                } else {
+                    progressBar.style.width = '0%';
+                }
+            }
+        }
+
+        // Campaign Type Selection
+        function selectCampaignType(type) {
+            selectedCampaignType = type;
+            
+            // Update visual selection
+            document.querySelectorAll('.campaign-type-card').forEach(card => {
+                card.classList.remove('border-primary', 'bg-primary-50');
+            });
+            
+            event.currentTarget.classList.add('border-primary', 'bg-primary-50');
+            
+            // Update summary
+            document.getElementById('summary-type').textContent = type === 'email' ? 'Email Campaign' : 'SMS Campaign';
+            
+            // Auto-advance after selection
+            setTimeout(() => {
+                nextStep();
+            }, 1000);
+        }
+
+        // Audience Selection
+        function selectAudience(audience) {
+            selectedAudience = audience;
+            
+            // Update radio selection
+            document.querySelectorAll('input[name="audience"]').forEach(radio => {
+                radio.checked = false;
+            });
+            document.getElementById(audience).checked = true;
+            
+            // Update visual selection
+            document.querySelectorAll('.audience-segment').forEach(card => {
+                card.classList.remove('border-primary', 'bg-primary-50');
+            });
+            event.currentTarget.classList.add('border-primary', 'bg-primary-50');
+            
+            // Update summary
+            const audienceNames = {
+                'recent-buyers': 'Recent Buyers',
+                'cart-abandoners': 'Cart Abandoners',
+                'vip-customers': 'VIP Customers'
+            };
+            document.getElementById('summary-audience').textContent = audienceNames[audience];
+            
+            // Enable next button
+            document.getElementById('audience-next').disabled = false;
+        }
+
+        // Template Selection
+        function selectTemplate(template) {
+            selectedTemplate = template;
+            
+            // Update visual selection
+            document.querySelectorAll('.template-option').forEach(option => {
+                option.classList.remove('border-primary', 'bg-primary-50');
+            });
+            event.currentTarget.classList.add('border-primary', 'bg-primary-50');
+            
+            // Show preview
+            document.getElementById('preview-placeholder').classList.add('hidden');
+            document.getElementById('campaign-preview').classList.remove('hidden');
+            
+            // Enable next button
+            document.getElementById('generation-next').disabled = false;
+        }
+
+        // AI Generation Animation
+        function startAIGeneration() {
+            const steps = ['ai-step-1', 'ai-step-2', 'ai-step-3', 'ai-step-4'];
+            let currentAIStep = 0;
+
+            function processNextStep() {
+                if (currentAIStep > 0) {
+                    // Complete previous step
+                    const prevStep = document.getElementById(steps[currentAIStep - 1]);
+                    const prevIcon = prevStep.querySelector('div');
+                    prevIcon.className = 'w-8 h-8 bg-accent rounded-full flex items-center justify-center';
+                    prevIcon.innerHTML = '<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>';
+                    prevStep.querySelector('span').classList.remove('text-text-secondary');
+                    prevStep.querySelector('span').classList.add('text-text-primary');
+                }
+
+                if (currentAIStep < steps.length) {
+                    // Start current step
+                    const currentStepElement = document.getElementById(steps[currentAIStep]);
+                    const icon = currentStepElement.querySelector('div');
+                    icon.className = 'w-8 h-8 bg-primary rounded-full flex items-center justify-center animate-pulse';
+                    icon.innerHTML = '<div class="w-2 h-2 bg-white rounded-full"></div>';
+                    currentStepElement.querySelector('span').classList.remove('text-text-secondary');
+                    currentStepElement.querySelector('span').classList.add('text-text-primary');
+
+                    currentAIStep++;
+                    setTimeout(processNextStep, 2000);
+                } else {
+                    // All steps complete
+                    setTimeout(() => {
+                        document.getElementById('generation-next').disabled = false;
+                    }, 1000);
+                }
+            }
+
+            processNextStep();
+        }
+
+        // Campaign Launch
+        function launchCampaign() {
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.querySelector('#success-modal .bg-surface').classList.remove('scale-95');
+            document.querySelector('#success-modal .bg-surface').classList.add('scale-100');
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Assistant Panel
+        function toggleAssistant() {
+            const panel = document.getElementById('assistant-panel');
+            const toggle = document.getElementById('assistant-toggle');
+            
+            if (assistantOpen) {
+                panel.classList.add('translate-x-full');
+                toggle.classList.remove('hidden');
+                assistantOpen = false;
+            } else {
+                panel.classList.remove('translate-x-full');
+                toggle.classList.add('hidden');
+                assistantOpen = true;
+            }
+        }
+
+        function updateAssistantContent() {
+            const content = document.getElementById('assistant-content');
+            const stepContent = {
+                1: {
+                    text: "Choose between email and SMS campaigns. Email is great for detailed content, while SMS offers immediate reach with higher open rates.",
+                    tips: [
+                        "💡 Email campaigns allow for rich content and visuals",
+                        "📱 SMS campaigns have 98% open rates",
+                        "🎯 Both support AI personalization"
+                    ]
+                },
+                2: {
+                    text: "Our AI analyzes your customer data to suggest the most responsive segments. Each segment shows predicted performance metrics.",
+                    tips: [
+                        "📊 Recent buyers have high engagement rates",
+                        "🛒 Cart abandoners show strong conversion potential",
+                        "⭐ VIP customers generate highest revenue"
+                    ]
+                },
+                3: {
+                    text: "Watch as AI generates personalized content based on customer behavior, preferences, and purchase history.",
+                    tips: [
+                        "🤖 AI analyzes 50+ data points per customer",
+                        "✨ Content adapts to individual preferences",
+                        "📈 Performance predictions use machine learning"
+                    ]
+                },
+                4: {
+                    text: "Fine-tune your campaign settings and launch when ready. AI will continue optimizing performance in real-time.",
+                    tips: [
+                        "⏰ AI optimizes send times for each recipient",
+                        "🔄 A/B testing runs automatically",
+                        "📊 Real-time performance tracking included"
+                    ]
+                }
+            };
+
+            const stepData = stepContent[currentStep];
+            content.innerHTML = `
+                <p class="text-sm text-text-secondary mb-3">${stepData.text}</p>
+                <div class="space-y-2">
+                    ${stepData.tips.map(tip => `
+                        <button class="text-left text-sm text-primary hover:text-primary-700 block">
+                            ${tip}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Initialize demo
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            updateAssistantContent();
+            
+            // Auto-show assistant after 3 seconds
+            setTimeout(() => {
+                if (!assistantOpen) {
+                    toggleAssistant();
+                }
+            }, 3000);
+        });
+
+        // Mobile swipe navigation
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentStep < 4) {
+                    // Swipe left - next step
+                    if (canProceedToNextStep()) {
+                        nextStep();
+                    }
+                } else if (diff < 0 && currentStep > 1) {
+                    // Swipe right - previous step
+                    previousStep();
+                }
+            }
+        }
+
+        function canProceedToNextStep() {
+            switch (currentStep) {
+                case 1:
+                    return selectedCampaignType !== '';
+                case 2:
+                    return selectedAudience !== '';
+                case 3:
+                    return selectedTemplate !== '';
+                default:
+                    return true;
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' && currentStep < 4 && canProceedToNextStep()) {
+                nextStep();
+            } else if (e.key === 'ArrowLeft' && currentStep > 1) {
+                previousStep();
+            } else if (e.key === 'Escape') {
+                if (assistantOpen) {
+                    toggleAssistant();
+                }
+            }
+        });
+
+        // Analytics tracking (demo purposes)
+        function trackDemoEvent(event, data) {
+            console.log('Demo Event:', event, data);
+            // In real implementation, this would send to analytics
+        }
+
+        // Track demo progress
+        function trackStepCompletion(step) {
+            trackDemoEvent('step_completed', { step: step });
+        }
+
+        // Enhanced interaction feedback
+        document.querySelectorAll('.card, .btn-primary, .btn-outline').forEach(element => {
+            element.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script id="dhws-elementInspector" src="../public/dhws-web-inspector.js"></script>
+<script id="dhws-errorTracker" src="../public/dhws-error-tracker.js"></script>
+</body>
+</html>
